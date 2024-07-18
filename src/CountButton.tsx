@@ -6,7 +6,7 @@ export default function CountButton({ type, setCount, locked }) {
       if (type === "minus") {
         return prev > 0 ? prev - 1 : 0;
       } else {
-        return prev < 5 ? prev + 1 : 5;
+        return !locked ? prev + 1 : prev;
       }
     });
     e.currentTarget.blur();
